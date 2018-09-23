@@ -1,10 +1,12 @@
-import Mario from '../sprites/Mario';
-import Goomba from '../sprites/Goomba';
-import Turtle from '../sprites/Turtle';
-import PowerUp from '../sprites/PowerUp';
-import SMBTileSprite from '../sprites/SMBTileSprite';
-import AnimatedTiles from 'phaser-animated-tiles/dist/AnimatedTiles.min.js';
-import Fire from '../sprites/Fire';
+// import Mario from '../sprites/Mario';
+// import Goomba from '../sprites/Goomba';
+// import Turtle from '../sprites/Turtle';
+// import PowerUp from '../sprites/PowerUp';
+// import SMBTileSprite from '../sprites/SMBTileSprite';
+// import AnimatedTiles from 'phaser-animated-tiles/dist/AnimatedTiles.min.js';
+// import Fire from '../sprites/Fire';
+
+import Hex from '../sprites/Hex';
 
 class GameScene extends Phaser.Scene {
     constructor(test) {
@@ -15,20 +17,17 @@ class GameScene extends Phaser.Scene {
 
     preload() {
 	console.log("GameScene")
-        this.load.scenePlugin('animatedTiles', AnimatedTiles, 'animatedTiles', 'animatedTiles');
     }
 
     create() {
-        // Places to warp to (from pipes). These coordinates is used also to define current room (see below)
-        this.destinations = {};
 
-        // Array of rooms to keep bounds within to avoid the need of multiple tilemaps per level.
-        // It might be a singe screen room like when going down a pipe or a sidescrolling level.
-        // It's defined as objects in Tiled.
-        this.rooms = [];
+	new Hex({
+            scene: this,
+            key: 'hex',
+            x: 100,
+            y: 100
+        });
 
-        // Running in 8-bit mode (16-bit mode is avaliable for the tiles, but I haven't done any work on sprites etc)
-        this.eightBit = true;
 
         // Add and play the music
         // this.music = this.sound.add('overworld');

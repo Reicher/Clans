@@ -13,13 +13,13 @@ class TitleScene extends Phaser.Scene {
             key: 'title',
             frames: [{
                 frame: 'title',
-                key: 'mario-sprites'
+                key: 'sprites'
             }]
         };
-        // this.anims.create(config);
+        this.anims.create(config);
 
         this.title = this.add.sprite(this.sys.game.config.width / 2, 16 * 5);
-        //this.title.play('title');
+        this.title.play('title');
 
         this.scene.bringToTop();
 

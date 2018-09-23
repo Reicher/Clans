@@ -54,7 +54,7 @@ class BootScene extends Phaser.Scene {
 
         // Beginning of an atlas to replace the spritesheets above. Always use spriteatlases. I use TexturePacker to prepare them.
         // Check rawAssets folder for the TexturePacker project I use to prepare these files.
-        // this.load.atlas('mario-sprites', 'assets/mario-sprites.png', 'assets/mario-sprites.json');
+        this.load.atlas('sprites', 'assets/spritesheet.png', 'assets/sprites.json');
 
         // Music to play. It's not properly edited for an continous loop, but game play experience isn't really the aim of this repository either.
         // this.load.audio('overworld', [
